@@ -1,6 +1,5 @@
 require('dotenv').config();
 const http = require('http');
-const { url } = require('inspector');
 const uuid = require('uuid');
 
 let allUsers = [];
