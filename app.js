@@ -33,7 +33,12 @@ const server = http.createServer((req, res) => {
             let person;
             req.on('data', (chunk) => {
                 person = JSON.parse(new TextDecoder().decode(chunk));
-                if (person.name && person.age) {
+                if (
+                    typeof person.name === 'string' &&
+                    typeof person.age === 'number',
+                    Array.isArray(person.hobbies) &&
+                    (person.hobbies.every((hobbie) => typeof hobbie === 'string') || person.length === 0)
+                ) {
                     person.id = uuid.v1();
                     allUsers.push(person);
                     res.statusCode = 201;
@@ -41,7 +46,7 @@ const server = http.createServer((req, res) => {
                     res.write(JSON.stringify(person));
                 } else {
                     res.statusCode = 400;
-                    res.statusMessage = 'Person object should contains name and age fields!';
+                    res.statusMessage = 'Person object should contains name, age and hobbies fields with right type!';
                 }
 
                 res.end();

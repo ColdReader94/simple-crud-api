@@ -8,8 +8,11 @@
 6. Открываем postman или аналогичную тулу, вписываем адрес и порт сервера, выбираем тип данных json или application/json в зависимости от версии postman (если кликнуть по вкладке body, справа появится меню выбора типа данных), выбираем метод запроса, для post/put запросов также в body вписываем объект в json формате вида: 
 {
   "name": "somerandomtexthere,
-  "age": "somerandomtextornumberhere"
+  "age": 25,
+  "hobbies": ["sleeping", "eating"]
 }
+
+где name - строка, age - число, hobbies - массив строк
 
 Пример PUT запроса в postman можно увидеть на скриншоте PR
 
