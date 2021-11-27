@@ -1,0 +1,29 @@
+{
+  "name": "simple-crud-api",
+  "version": "1.0.0",
+  "description": "Private repository for @coldreader94",
+  "scripts": {
+    "start:dev": "nodemon ./app.js",
+    "start:prod": "webpack && node dist/main.js",
+    "webpack": "webpack",
+    "start": "node dist/main.js",
+    "lint": "eslint ./src",
+    "lintfix": "eslint ./src --fix",
+    "prettier": "prettier --write ./src"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-webpack-plugin": "^2.5.4",
+    "nodemon": "^2.0.9",
+    "prettier": "^2.2.1",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
