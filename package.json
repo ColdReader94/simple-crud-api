@@ -5,8 +5,8 @@
   "scripts": {
     "start:dev": "nodemon ./app.js",
     "start:prod": "webpack && node dist/main.js",
+    "start": "node ./app.js",
     "webpack": "webpack",
-    "start": "node dist/main.js",
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix",
     "prettier": "prettier --write ./src"
@@ -25,5 +25,8 @@
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
   }
 }
