@@ -95,9 +95,13 @@ const server = http.createServer((req, res) => {
                 res.statusCode = 400;
                 res.statusMessage = 'Wrong id! Id isn`t matching to uuid format!';
             }
-            res.end();
         });
+    } else {
+        res.statusCode = 404;
+        res.statusMessage = 'The URL path is wrong, so no data can be sand to you. Please check address that you have been entered.';
     }
+    
+    res.end();
 });
 
 server.listen(process.env.PORT, process.env.LOCALHOST, () => {
